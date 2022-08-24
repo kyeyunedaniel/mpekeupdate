@@ -3,13 +3,8 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-            <div class="row">
-                 <div class="col-md-6">
-                    <img height="250px" width="400px" src="{{asset('photos/mpererwe.jpg')}}">
-                    
-                </div>                
-
-                <div class="card-body col-md-6">
+          
+                      <div class="card-body col-md-6">
                     <div class=""><h1 style="text-align: center; ">Reset Password</h1> </div>
 
                     @if(Session::has('success'))
@@ -44,7 +39,7 @@
                         </div>
                     </form>
                 </div>
-            </div>
+           
         
     </div>
 </div>

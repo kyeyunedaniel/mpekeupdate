@@ -17,7 +17,7 @@ class SearchController extends Controller
         $search = $request->input('search');
         $posts = Warehouse::query()
         ->where('name', 'like', "%{$sear}%")
-        ->orWhere('district', 'like', "%{$sear}%")
+        ->orWhere('district', 'like', "%{$sear}%");
         // ->paginate(6);
         dd($posts);
 		return view('full-text-search');
