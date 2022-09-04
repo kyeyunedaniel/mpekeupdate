@@ -1,0 +1,56 @@
+    @extends('processor.app')
+
+    @section('content')
+    <div class="container">
+            <div class="row">
+            <div class="col-md-6 col-lg-4">
+                <div class="widget-small primary coloured-icon">
+                    <i class="icon fa fa-users fa-3x"></i>
+                    <div class="info">
+                        <h5>Processing Locations</h5>
+                        <h3>4</h3>
+                       
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-5">
+                <div class="widget-small danger coloured-icon">
+                    <i class="icon fa fa-star fa-3x"></i>
+                    <div class="info">
+                        <h4>DATE</h4>
+                        <p>{{now()}}</p>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="">
+                   <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                <div class="card-body" style="text-align: center;">
+                    <h1 class="card-title"> Processing Location </h1>
+                    
+                    <a href="{{route('processor.index')}}" class="btn btn-primary">View</a>
+                </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card">
+                <div class="card-body" style="text-align: center;">
+                    <h1 class="card-title">Profile</h1>
+                    <a href="{{route('profile_processor')}}" class="btn btn-primary">View</a>
+                </div>
+                </div>
+            </div>
+            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endsection

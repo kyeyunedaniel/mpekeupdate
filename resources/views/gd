@@ -1,0 +1,58 @@
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img
+        src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg"
+        alt="..."
+        class="img-fluid"
+      />
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">
+          This is a wider card with supporting text below as a natural lead-in to
+          additional content. This content is a little bit longer.
+        </p>
+        <p class="card-text">
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+                    @foreach($products as $pro)
+                        <div class="col-lg-3">
+                            <div class="card" style="margin-bottom: 20px; height: auto;">
+                                <!-- <img src="/images/{{ $pro->image_path }}" -->
+                                <img src="@if($pro->logo){{asset($pro->logo)}}@else{{asset('photos/agric.jpg')}}@endif"
+                                     class="card-img-top mx-auto"
+                                     style="height: 150px; width: 150px;display: block;"
+                                     alt="{{ $pro->logo }}"
+                                >
+                                <div class="card-body">
+                                    <a href=""><h6 class="card-title">{{ $pro->name }}</h6></a>
+                                    <p>UGx.{{ $pro->price }}</p>
+                                    <form action="{{ route('admin.cart.store') }}" method="POST">
+                                        {{ csrf_field() }}
+                                        <input type="hidden" value="{{ $pro->id }}" id="id" name="id">
+                                        <input type="hidden" value="{{ $pro->name }}" id="name" name="name">
+                                        <input type="hidden" value="{{ $pro->price }}" id="price" name="price">
+                                        <input type="hidden" value="{{ $pro->logo }}" id="img" name="img">
+                                        <input type="hidden" value="{{ $pro->name }}" id="slug" name="slug">
+                                        <input type="text" value="{{ $pro->quantity }}" id="quantity" name="quantity">
+                                        <div class="card-footer" style="background-color: white;">
+                                              <div class="row">
+                                                <button class="btn btn-secondary btn-sm" class="tooltip-test" title="add to cart">
+                                                    <i class="fa fa-shopping-cart"></i> add to cart
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>

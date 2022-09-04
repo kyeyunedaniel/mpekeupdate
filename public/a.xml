@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Metrics>
+<business>
+ 	<name>password</name>
+	 <email>tugume@gmail.com</email>
+</business>
+<business>
+	<name>password</name>
+	<email>tugume@gmail.com</email>
+ </business>
+<business>
+	<name>Purchase Funnel</name>
+	<email>Purchase Funnel</email>
+</business>
+<business>
+	<name>Purchase Funnel</name>
+	<email>Purchase Funnel</email>
+</business>
+<business>
+	<Metricname>Purchase Funnel</Metricname>
+	<datasource>tumusiime</datasource>
+	<visualizationname>Purchase Funnel</visualizationname>
+	<visualizationlink>Purchase Funnel</visualizationlink>
+	<description>Purchase Funnel</description>
+</business>
+</Metrics>

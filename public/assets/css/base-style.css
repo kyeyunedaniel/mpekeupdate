@@ -1,0 +1,70 @@
+/* =====================
+BASE LANDING CSS
+======================== */
+.slider-active-wrapper {
+  position: relative;
+}
+
+.slider-active-wrapper .tns-nav {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+}
+
+.slider-active-wrapper .tns-nav button {
+  width: 15px;
+  height: 15px;
+  border: 0;
+  background: rgba(47, 128, 237, 0.2);
+  margin: 10px;
+  border-radius: 50%;
+}
+
+.slider-active-wrapper .tns-nav button.tns-nav-active {
+  background: #2f80ed;
+}
+
+.slider-active-wrapper .slider-active .single-slider {
+  padding: 1px;
+}
+
+/* ========================================
+BANNER CSS
+=========================================== */
+.banner-section {
+  padding-top: 64px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .banner-section {
+    padding-top: 77px;
+  }
+}
+
+.banner-section .banner-area {
+  padding: 70px 0px;
+  background-image: url("../img/banner/banner-bg.jpg");
+}
+
+.banner-section .banner-area .banner-content h3 {
+  color: #fff;
+}
+
+.banner-section .banner-area .banner-content .breadcrumb {
+  padding: 0px;
+  background: transparent;
+}
+
+.banner-section .banner-area .banner-content .breadcrumb .breadcrumb-item {
+  color: #fff;
+  font-size: 20px;
+}
+
+.banner-section .banner-area .banner-content .breadcrumb .breadcrumb-item::before {
+  color: #fff;
+}
+
+.banner-section .banner-area .banner-content .breadcrumb .breadcrumb-item a {
+  color: #fff;
+}
