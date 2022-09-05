@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 namespace App\Http\Controllers;
 
@@ -64,4 +64,4 @@ class PaytmController extends Controller
     {
         return view('paytm.payment-page');
     } 
-}
+} -->
