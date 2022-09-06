@@ -62,6 +62,7 @@
     @include('farmer.partials.side')
        
         <main class="app-content" id="app">
+            
             <div class="description"><strong> SIGN ABOVE </strong></div>
            <div style="width: 500px; height: 100px;margin-left: 20px; " id="signature-pad" class="jay-signature-pad">
             <div class="jay-signature-pad--body">
@@ -72,22 +73,22 @@
                 <div class="signature-pad--actions txt-center">
                     <div>
                         <button type="button" class="button clear" data-action="clear">Clear</button>
-                        <button type="button" class="button save" data-action="save-png">Save as PNG</button>
+                        <button type="button" class="button save" id = "clear" data-action="save-png">Save as PNG</button>
                         <!-- <button type="button" class="button" data-action="change-color">Change color</button> -->
                     </div><br/>
                     <div>
-                        <button type="button" class="button save" data-action="save-png">Save as PNG</button>
-                        <button type="button" class="button save" data-action="save-jpg">Save as JPG</button>
-                        <button type="button" class="button save" data-action="save-svg">Save as SVG</button>
+                        <button type="button" class="button save" data-action="save-png" onclick="vafunc()">Save as PNG</button>
+                        
                     </div>
                 </div>
                 <select class="mdb-select md-form" searchable="Search here..">
-  <option value="" disabled selected>Choose your country</option>
-  <option value="1">USA</option>
-  <option value="2">Germany</option>
-  <option value="3">France</option>
-  <option value="3">Poland</option>
-  <option value="3">Japan</option>
+  <option value="" disabled selected>Choose your Region</option>
+  <option value="1">Central</option>
+  
+  <option value="3">Northern</option>
+  <option value="3">Eastern</option>
+  <option value="3">Western</option>
+  <option value="3">Southern</option>
 </select>
             </div>
         </div>
@@ -96,6 +97,16 @@
         <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/signature_pad/1.5.3/signature_pad.min.js"></script>
         <script>
+            function vafunc(){
+                // var canvas = document.getElementById('jay-signature-pad');
+                // var dataURL = canvas.toDataURL();
+                // document.getElementById('img').src = dataURL;   
+                window.alert("signature added");  
+                
+                
+
+
+            }
             var wrapper = document.getElementById("signature-pad");
             var clearButton = wrapper.querySelector("[data-action=clear]");
             var changeColorButton = wrapper.querySelector("[data-action=change-color]");

@@ -39,14 +39,14 @@
 </head>
 <body class="app sidebar-mini rtl ">
     
-      @include('admin.partials.header')
-    @include('admin.partials.side')
+    @include('buyer.partials.header')
+    @include('buyer.partials.side')
     <main class="app-content" id="app">
         <div class="container text-center" >
     <div class="col-md-11 text-center">       
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Weather forecast for {{ $current->city }}-{{ $current->country }}</div>
+                <div class="card-header">Weather forecast for {{ $current->country }}</div>
                 <div class="card-body ">
                     @php
 

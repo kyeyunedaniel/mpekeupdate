@@ -21,16 +21,16 @@
      <li>
         <a class="app-menu__item {{ Route::currentRouteName() == 'farmer.index' ? 'active' : '' }}" href="{{route('signature-pad')}} ">
             <i class="app-menu__icon fa fa-dashboard"></i>
-            <span class="app-menu__label">&nbsp;&nbsp;sign</span>
+            <span class="app-menu__label">&nbsp;&nbsp;Sign</span>
         </a>
     </li>
        
-    <li>
+    <!-- <li>
         <a class="app-menu__item {{ Route::currentRouteName() == 'farmer_predict' ? 'active' : '' }}" href="{{route('farmer_predict')}}">
             <i class="app-menu__icon fa fa-bar-chart"></i>
             <span class="app-menu__label">&nbsp;&nbsp;Prediction</span>
         </a>
-    </li>
+    </li> -->
     <li>
         <a class="app-menu__item {{ Route::currentRouteName() == 'farmer_forecast' ? 'active' : '' }}" href="{{route('farmer_forecast')}} ">
             <i class="app-menu__icon fa fa-shopping-bag"></i>

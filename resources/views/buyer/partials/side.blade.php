@@ -22,7 +22,7 @@
         <li>
             <a class="app-menu__item {{ Route::currentRouteName() == 'buyer.cart' ? 'active' : '' }}" href="{{route('buyer.shop')}}">
                 <i class="app-menu__icon fa fa-bar-chart"></i>
-                <span class="app-menu__label">&nbsp;&nbsp;GO Shopping</span>
+                <span class="app-menu__label">&nbsp;&nbsp;Shop</span>
             </a>
         </li>
             <li>

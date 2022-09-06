@@ -11,9 +11,8 @@ df.plot()
 plt.show()
 
 #split between the training and the test data sets. The last 12 periods form the test data
-df_train = df.iloc[:–12]
-df_test = df.iloc[–12:]
-
+df_train = df.iloc[:-12]
+df_test = df.iloc[-12:]
 #build and train the model on the training data
 model = HWES(df_train, seasonal_periods=12, trend='add', seasonal='mul')
 fitted = model.fit(optimized=True, use_brute=True)
