@@ -73,19 +73,19 @@
           </div>
           <div class="input-field col s12 m1">
             <input id="learningrate" type="number" placeholder="Eg: 0.001" class="validate tooltipped" data-position="bottom" data-delay="50" data-tooltip="learning rate during training">
-            <label class="active">Learning rate</label>
+            <label class="active"readonly>Learning rate</label>
           </div>
           <div class="input-field col s12 m1">
             <input id="inputdropoutrate" type="number" placeholder="Eg: 0.9" class="validate tooltipped" data-position="bottom" data-delay="50" data-tooltip="dropout rate for LSTM input">
-            <label class="active">Input dropout rate</label>
+            <label class="active"readonly>Input dropout rate</label>
           </div>
           <div class="input-field col s12 m1">
             <input id="outputdropoutrate" type="number" placeholder="Eg: 0.9" class="validate tooltipped" data-position="bottom" data-delay="50" data-tooltip="dropout rate for LSTM output">
-            <label class="active">Output dropout rate</label>
+            <label class="active"readonly>Output dropout rate</label>
           </div>
           <div class="input-field col s12 m1">
             <input id="timestamp" type="number" class="validate tooltipped" placeholder="Eg: 5" data-position="bottom" data-delay="50" data-tooltip="Trends for every minibatch">
-            <label class="active">Timestamp per training</label>
+            <label class="active"readonly>Timestamp per training</label>
           </div>
           <div class="input-field col s12 m1">
             <input id="sizelayer" type="number" class="validate tooltipped" placeholder="Eg: 64" data-position="bottom" data-delay="50" data-tooltip="LSTM size">
@@ -93,15 +93,15 @@
           </div>
           <div class="input-field col s12 m1">
             <input id="epoch" type="number" class="validate tooltipped" placeholder="Eg: 10" data-position="bottom" data-delay="50" data-tooltip="Total epoch">
-            <label class="active">Training Iteration</label>
+            <label class="active"readonly>Training Iteration</label>
           </div>
           <div class="input-field col s12 m1">
             <input id="future" type="number" class="validate tooltipped" placeholder="Eg: 10" data-position="bottom" data-delay="50" data-tooltip="number of days forecast">
-            <label class="active">Future days to forecast</label>
+            <label class="active"readonly>Future days to forecast</label>
           </div>
           <div class="input-field col s12 m1">
             <input id="smooth" type="number" class="validate tooltipped" placeholder="Eg: 10" data-position="bottom" data-delay="50" data-tooltip="Rate anchor smoothing for trends">
-            <label class="active">Smoothing weights</label>
+            <label class="active"readonly>Smoothing weights</label>
           </div>
         </div>
         <div class="row center">
@@ -110,19 +110,19 @@
           </div>
           <div class="input-field col s12 m2">
             <input id="initialmoney" type="number" placeholder="Eg: 10000" class="validate tooltipped" data-position="bottom" data-delay="50" data-tooltip="Money in for simulation">
-            <label class="active">Initial money(usd)</label>
+            <label class="active" readonly>Initial money(usd)</label>
           </div>
           <div class="input-field col s12 m2">
             <input id="maxbuy" type="number" placeholder="Eg: 5" class="validate tooltipped" data-position="bottom" data-delay="50" data-tooltip="Max unit to buy">
-            <label class="active">Max buy(unit)</label>
+            <label class="active" readonly>Max buy(unit)</label>
           </div>
           <div class="input-field col s12 m2">
             <input id="maxsell" type="number" class="validate tooltipped" placeholder="Eg: 10" data-position="bottom" data-delay="50" data-tooltip="Max unit to sell">
-            <label class="active">Max sell(unit)</label>
+            <label class="active" readonly>Max sell(unit)</label>
           </div>
           <div class="input-field col s12 m2">
             <input id="history" type="number" class="validate tooltipped" placeholder="Eg: 5" data-position="bottom" data-delay="50" data-tooltip="MA to compare of">
-            <label class="active">Historical rolling</label>
+            <label class="active" readonly>Historical rolling</label>
           </div>
         </div>
       </span></div>

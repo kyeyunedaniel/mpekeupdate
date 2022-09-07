@@ -46,8 +46,88 @@
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     padding-inline-start: 40px;" class="collapsible" data-collapsible="accordion">
+<div>
+
+
+
+<?php  
+
+$dataPoints = array( 
+
+    array("x" => 1514485800000, "y" => array(1840,1850,1860,1910)),
+    array("x" => 1514399400000, "y" => array(1669,1782,1638,1769)),
+    array("x" => 1514313000000, "y" => array(1253,1060,1199,1432)),
+    array("x" => 1513881000000, "y" => array(1526,1564,1309,1485)),
+    array("x" => 1513794600000, "y" => array(1667,1583,1022,1199)),
+    array("x" => 1513708200000, "y" => array(1309,1485,1287,1167)),
+    array("x" => 1513621800000, "y" => array(1149,1667,1583,1022)),
+    array("x" => 1513535400000, "y" => array(1564,1309,1485,1287)),
+    array("x" => 1513276200000, "y" => array(1309,1485,1289,1167)),
+    array("x" => 1513189800000, "y" => array(1087,1149,1339,1309)),
+    array("x" => 1513103400000, "y" => array(1309,1485,1287,1167)),
+    array("x" => 1513017000000, "y" => array(1309,1485,1287,1167)),
+    array("x" => 1512930600000, "y" => array(1209,1285,1287,1167)),
+    array("x" => 1512671400000, "y" => array(1209,1285,1287,1167)),
+    array("x" => 1512585000000, "y" => array(1149,1267,1283,1180)),
+    array("x" => 1512498600000, "y" => array(1209,1285,1287,1168)),
+    array("x" => 1512412200000, "y" => array(1109,1295,1270,1169)),
+    array("x" => 1512325800000, "y" => array(1309,1485,1287,1167)),
+    array("x" => 1512066600000, "y" => array(1000,1150,1130,1170))
+)
+   
+
+
+?>
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+window.onload = function() {
+ 
+var chart = new CanvasJS.Chart("chartContainer", {
+    title: {
+        text: "GRAIN PRICES PREVAILING"
+    },
+    subtitles: [{
+        text: "UGX"
+    }],
+    axisX: {
+        valueFormatString: "DD MMM"
+    },
+    axisY: {
+        suffix: " UGX"
+    },
+    data: [{
+        type: "candlestick",
+        xValueType: "dateTime",
+        yValueFormatString: "#,##0.0 UGX",
+        xValueFormatString: "",
+        dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+    }]
+});
+chart.render();
+ 
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 370px; width: 800px;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>                       
+
+
+
+
+
+</div>
+
+
+
+
     <li>
-      <div class="collapsible-header"><i class="material-icons" style="font-size:3rem">Settings</i>
+      <div class="collapsible-header"><i class="material-icons" style="font-size:3rem"></i>
+      </div>
         <div class="row" style="margin-bottom:10px;margin-top:10px;margin-left:600px;">
           <div class="col s3 m1">
             
@@ -67,64 +147,71 @@
           </div>
         </div>
       </div>
+
+
       <div class="collapsible-body"><span>
         <div class="row center">
           <div class="input-field col m2 offset-m1" style="margin-left:5.33%">
-            Neural Network settings
+           
+<br>
+  
           </div>
-          <div class="input-field col s12 m1">
-            <input id="learningrate" type="number" placeholder="Eg: 0.001" class="validate tooltipped" data-position="bottom" data-delay="50" data-tooltip="learning rate during training">
-            <label class="active">Learning rate</label>
-          </div>
-          <div class="input-field col s12 m1">
+          <form action="">
+          Neural Network settings
+
+          <br><br>
+            <input id="learningrate" type="number" placeholder="0.001" class="validate tooltipped" data-position="bottom" data-delay="50" data-tooltip="learning rate during training">
+            <label class="active" readonly>Learning rate</label>
+            <br><br>
+
             <input id="inputdropoutrate" type="number" placeholder="Eg: 0.9" class="validate tooltipped" data-position="bottom" data-delay="50" data-tooltip="dropout rate for LSTM input">
             <label class="active">Input dropout rate</label>
-          </div>
-          <div class="input-field col s12 m1">
+             
+           <br><br>
             <input id="outputdropoutrate" type="number" placeholder="Eg: 0.9" class="validate tooltipped" data-position="bottom" data-delay="50" data-tooltip="dropout rate for LSTM output">
             <label class="active">Output dropout rate</label>
-          </div>
-          <div class="input-field col s12 m1">
+             
+           <br><br>
             <input id="timestamp" type="number" class="validate tooltipped" placeholder="Eg: 5" data-position="bottom" data-delay="50" data-tooltip="Trends for every minibatch">
             <label class="active">Timestamp per training</label>
-          </div>
-          <div class="input-field col s12 m1">
+             
+           <br><br>
             <input id="sizelayer" type="number" class="validate tooltipped" placeholder="Eg: 64" data-position="bottom" data-delay="50" data-tooltip="LSTM size">
             <label class="active">Size layer</label>
-          </div>
-          <div class="input-field col s12 m1">
+             <br><br>
+           
             <input id="epoch" type="number" class="validate tooltipped" placeholder="Eg: 10" data-position="bottom" data-delay="50" data-tooltip="Total epoch">
             <label class="active">Training Iteration</label>
-          </div>
-          <div class="input-field col s12 m1">
+             
+           <br><br>
             <input id="future" type="number" class="validate tooltipped" placeholder="Eg: 10" data-position="bottom" data-delay="50" data-tooltip="number of days forecast">
             <label class="active">Future days to forecast</label>
-          </div>
-          <div class="input-field col s12 m1">
+             <br><br>
+           
             <input id="smooth" type="number" class="validate tooltipped" placeholder="Eg: 10" data-position="bottom" data-delay="50" data-tooltip="Rate anchor smoothing for trends">
             <label class="active">Smoothing weights</label>
-          </div>
-        </div>
-        <div class="row center">
-          <div class="input-field col m2 offset-m1" style="margin-left:5.33%">
+             <br><br>
+      
+        
+          
             Buying & Selling simulation
-          </div>
-          <div class="input-field col s12 m2">
+             
+          
             <input id="initialmoney" type="number" placeholder="Eg: 10000" class="validate tooltipped" data-position="bottom" data-delay="50" data-tooltip="Money in for simulation">
             <label class="active">Initial money($)</label>
-          </div>
-          <div class="input-field col s12 m2">
+             
+         
             <input id="maxbuy" type="number" placeholder="Eg: 5" class="validate tooltipped" data-position="bottom" data-delay="50" data-tooltip="Max unit to buy">
             <label class="active">Max buy(unit)</label>
-          </div>
-          <div class="input-field col s12 m2">
+             
+         
             <input id="maxsell" type="number" class="validate tooltipped" placeholder="Eg: 10" data-position="bottom" data-delay="50" data-tooltip="Max unit to sell">
             <label class="active">Max sell(unit)</label>
-          </div>
-          <div class="input-field col s12 m2">
+             
+          
             <input id="history" type="number" class="validate tooltipped" placeholder="Eg: 5" data-position="bottom" data-delay="50" data-tooltip="MA to compare of">
             <label class="active">Historical rolling</label>
-          </div>
+             
         </div>
       </span></div>
     </li>
@@ -132,7 +219,7 @@
 </div>
 
 
-<h6 class='header center light'> upload stock CSV file to be used</h6>
+<!-- <h6 class='header center light'> upload stock CSV file to be used</h6> -->
 <div class="row" style="padding-left:10px;padding-right:10px">
   <div class="col s12 m12">
     <div id="div_output" style="height: 500px;"></div>
