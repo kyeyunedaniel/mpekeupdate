@@ -75,8 +75,8 @@
                             @error('grain') {{ $message }} @enderror
                         </div>
                         <div class="form-group">
-                            <label class="control-label" for="charge">Stroge charge <span class="m-l-5 text-danger"> *</span></label>
-                            <input placeholder="Enter Stroge charge" class="form-control @error('charge') is-invalid @enderror" type="text" name="charge" id="charge" value="{{ old('charge') }}"/>
+                            <label class="control-label" for="charge">Storage charge <span class="m-l-5 text-danger"> *</span></label>
+                            <input placeholder="Enter Storage charge" class="form-control @error('charge') is-invalid @enderror" type="text" name="charge" id="charge" value="{{ old('charge') }}"/>
                             @error('charge') {{ $message }} @enderror
                         </div>
                         <div class="form-group">
