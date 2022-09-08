@@ -35,10 +35,10 @@ class PaytmController extends Controller
     public function paytmCallback()
     {
         $transaction = PaytmWallet::with('receive');
-        
+
         $response = $transaction->response(); // To get raw response as array
         //Check out response parameters sent by paytm here -> http://paywithpaytm.com/developer/paytm_api_doc?target=interpreting-response-sent-by-paytm
-        
+
         if($transaction->isSuccessful()){
           //Transaction Successful
           return view('paytm.paytm-success-page');
@@ -63,5 +63,9 @@ class PaytmController extends Controller
     public function paytmPurchase()
     {
         return view('paytm.payment-page');
+<<<<<<< HEAD
     } 
+=======
+    }
+>>>>>>> 0d7d46682308916829dd7ff029a5d02c0fc1e985
 }
