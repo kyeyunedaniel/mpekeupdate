@@ -136,11 +136,12 @@ for($i = 1; $i <= $nForecast; $i++) {
    }
    $anForecast[] = $nComputed;
 }
-echo("THE NEXT PREDICTED VALUE IS:");
-echo($anForecast[0]); echo('<br>');
+echo("THE NEXT PREDICTED VALUE IS UGX :");
+echo($anForecast[0]); 
+echo(" PER KILOGRAM:");
 
 
-
+echo('<br>');
 
 }
 ?>
