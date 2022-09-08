@@ -15,7 +15,17 @@
                     @endif
                 </div>
             </div>
-            <form action="{{ route('buyer.checkout.place.order') }}" method="POST" role="form">
+            <form action="https://checkout.flutterwave.com/v3/hosted/pay" method="POST" role="form">
+                <input type="hidden" name="public_key" value="FLWPUBK_TEST-020702750bd7f0266782da13ab90024d-X" />
+                <input type="hidden" name="customer[email]" value="kyeyunedaniel22@gmail.com" /> <br>
+                <input type="hidden" name="customer[name]" value="{{old('first_name',Auth::user()->name)}} " />
+                <input type="hidden" name="tx_ref" value="bitethtx-0eew19203" />
+                <input type="hidden" name="currency" value="UGX" />
+                <input type="hidden" name="meta[token]" value="54" />
+                <input type="hidden" name="redirect_url" value="http://127.0.0.1:8000/buyer" />
+                <input type="hidden" name="amount" value="{{ \Cart::getSubTotal() }}" />
+
+                
                 @csrf
                 <div class="row">
                     <div class="col-md-7">
@@ -92,6 +102,13 @@
                     </div>
                 </div>
             </form>
+            <script type="text/javascript">
+                    var x = getElementByName("phone_number").value;
+
+
+            </script> 
+                
+          
         </div>
     </section>
 @stop

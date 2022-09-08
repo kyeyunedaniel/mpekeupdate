@@ -374,39 +374,55 @@ class DashboardController extends Controller
      
     public function store(Request $request)
     {
-        //
+        $kind = $request->input('kind');
+        $firstName = $request->input('fname');
+        $last_name = $request->input('lname');
+        $email = $request->input('email');
+        $password = $request->input('password');
+        $user_name = $request->input('Username');
 
-        $employee =$request->validate([
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed']
+        $contact = $request->input('tagline');
+        $photo = $request->input('photo'); 
+        $photos="photos/username.png";
+    
+
+        $data=array('user_type'=>$kind,'name'=>$firstName." ".$last_name,'email'=>$email,'username'=>$user_name,'contact'=>$contact,'photo'=>$photos, 'password'=>$password);
+        DB::table('users')->insert($data);
+        return redirect('/admin')->with('success','User Added Successfully');
+
+    //     //
+
+    //     $employee =$request->validate([
+    //         'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+    //         'password' => ['required', 'string', 'min:8', 'confirmed']
                 
-            ]);
-        // dd($employee);
+    //         ]);
+    //     // dd($employee);
        
-        $fullname=$request->fname.'_'.$request->lname;
+    //     $fullname=$request->fname.'_'.$request->lname;
 
-             if($request->has("image")){
-                $photo = $request->file('image');
-                $imageName = $request->get("email").'.'.$photo->getClientOriginalExtension(); 
-                $photo->move(public_path('photos'), $imageName);
-                $photoPath = 'photos/'.$imageName;           
+    //          if($request->has("image")){
+    //             $photo = $request->file('image');
+    //             $imageName = $request->get("email").'.'.$photo->getClientOriginalExtension(); 
+    //             $photo->move(public_path('photos'), $imageName);
+    //             $photoPath = 'photos/'.$imageName;           
             
-               }
+    //            }
 
-             dd($request->all());
+    //          dd($request->all());
 
         
-       User::create([
-            'name' => $fullname,
-            'username' =>$request->Username,
-            'contact' =>$request->tagline,
-            'email' =>$request->email,
-            'user_type' =>$request->kind,
-            'password' => Hash::make($request->password),
-            'photo'  =>'photos/'.$imageName
-        ]);
-        $cartd=DB::table('carts')->where('user_id',Auth::user()->id)->count();
-        return back()->with('Account created successfully','success',false, false);
+    //    User::create([
+    //         'name' => $fullname,
+    //         'username' =>$request->Username,
+    //         'contact' =>$request->tagline,
+    //         'email' =>$request->email,
+    //         'user_type' =>$request->kind,
+    //         'password' => Hash::make($request->password),
+    //         'photo'  =>'photos/'.$imageName
+    //     ]);
+    //     $cartd=DB::table('carts')->where('user_id',Auth::user()->id)->count();
+    //     return back()->with('Account created successfully','success',false, false);
 
     }
  

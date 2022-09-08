@@ -104,7 +104,10 @@ class DashboardController extends Controller
        // dd($ware_house,$ware_hous);
         return view('buyer.house',compact('countries','ware_house','ware_hous'));
     }
-
+    public function predict(){
+            
+            return view('buyer.predict');
+        }
 
 
     public function cart_buyer()
@@ -133,9 +136,15 @@ class DashboardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     //here is the problem @today
     public function create()
     {
-        //
+        
+          
+
+
+
     }
 
     /**
@@ -146,7 +155,8 @@ class DashboardController extends Controller
      */
     public function store(Request $request)
     {
-        //
+    
+
     }
 
     /**
