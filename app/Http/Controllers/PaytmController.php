@@ -1,6 +1,6 @@
 <!-- <?php
 
-namespace App\Http\Controllers;
+//namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
@@ -64,4 +64,4 @@ class PaytmController extends Controller
     {
         return view('paytm.payment-page');
     } 
-} -->
+}
