@@ -5,7 +5,7 @@
         <div>
             <h1><i class=""></i> List of all registered farmers in the system</h1>
         </div>
-        <a href="{{ url('/admin/farmer/update') }}" class="btn btn-primary pull-right">Add Farmer</a>
+        <a href="http://127.0.0.1:8000/admin/User/create" class="btn btn-primary pull-right">Add Farmer</a>
          <div class="row">
             @if(Session::has('success'))
             <div style="color: green" class="alert alert-success">

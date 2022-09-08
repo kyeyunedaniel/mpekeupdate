@@ -47,8 +47,17 @@
     margin-inline-end: 0px;
     padding-inline-start: 40px;" class="collapsible" data-collapsible="accordion">
 <div>
-<div> <H2 align="center" color="DodgerBlue" >   PREDICTION  </H2>
 
+<div class="row">       
+        <div class="col-md-11">
+            <div class="card">
+                <div class="card-header"><h1>Price prediction</h1></div>
+
+                <div class="card-body bg-dark-200">
+                    
+                    
+        </div>
+    </div>
 
 <?php
 error_reporting(E_ALL);

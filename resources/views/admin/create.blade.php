@@ -24,7 +24,7 @@
                             <label>User type</label>
                               <select class="w3-select w3-border w3-margin-bottom" name="kind" required>
                                 <option value="" disabled selected>Select user kind</option>
-                                <option value="admin">Administrator</option>
+                                <option value="admin">admin</option>
                                 <option value="farmer">Farmer</option>
                                 <option value="ware_house">Warehouse Manager</option>
                                 <option value="buyer">Buyer</option>

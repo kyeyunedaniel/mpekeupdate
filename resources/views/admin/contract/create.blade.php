@@ -1,4 +1,4 @@
-    @extends('admin.app')
+@extends('admin.app')
     @section('title') Create contract @endsection
     =@section('content')
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
@@ -18,13 +18,13 @@
             @endif
         </div>
         <div class="row user">
-            <!-- <div class="col-md-2">
+            <div class="col-md-2">
                 <div class="tile p-0">
                     <ul class="nav flex-column nav-tabs user-tabs">
-                        <li class="nav-item"><a class="nav-link active" href="#general" data-toggle="tab">General</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="" data-toggle="tab">General</a></li>
                     </ul>
                 </div>
-            </div> -->
+            </div> 
             
             <div class="col-md-12">
                 <div class="tab-content">
@@ -161,15 +161,15 @@
                                             <option value="flour corn">flour corn</option>
                                             <option value="sweet corn" >sweet corn</option>
                                         </select>
-<!--                                         
-                                        <!-- <input
+                                       
+                                         <input
                                             class="form-control @error('Quality') is-invalid @enderror"
                                             type="text"
                                             placeholder="Enter quality Quality"
                                             id="Quality"
                                             name="Quality"
                                             value="{{ old('Quality') }}"
-                                        /> -->
+                                        /> 
                                         <div class="invalid-feedback active">
                                             <i class="fa fa-exclamation-circle fa-fw"></i> @error('Quality') <span>{{ $message }}</span> @enderror
                                         </div>
