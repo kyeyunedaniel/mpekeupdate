@@ -123,13 +123,16 @@
     </div>
     <br><br><br>
     <?php
- 
-$dataPoints = array( 
-	array("y" => 33, "label" => "admin" ),
-	array("y" => 24, "label" => "buyers" ),
-	array("y" => 18, "label" => "managers" ),
-	array("y" => 14, "label" => "farmers" ),
-	array("y" => 60, "label" => "warehouses" ),
+    $warehouses=DB::table('warehouses')->count();
+    $farmer=DB::table('users')->where('user_type','farmer')->count();
+    $admin=DB::table('users')->where('user_type','admin')->count();
+    $buyer=DB::table('users')->where('user_type','buyer')->count();
+    $dataPoints = array( 
+	array("y" => $admin, "label" => "admin" ),
+	array("y" => $buyer, "label" => "buyers" ),
+	array("y" => $warehouses, "label" => "warehouses" ),
+	array("y" => $farmer, "label" => "farmers" ),
+	
 	
 );
  

@@ -331,7 +331,7 @@ class DashboardController extends Controller
 //            }
 //         }
          $warehouses=DB::table('warehouses')->count();
-          $farmer=DB::table('users')->where('user_type','farmer')->count();
+            $farmer=DB::table('users')->where('user_type','farmer')->count();
           $admin=DB::table('users')->where('user_type','admin')->count();
           $buyer=DB::table('users')->where('user_type','buyer')->count();
         $cartd=DB::table('carts')->where('user_id',Auth::user()->id)->count();
