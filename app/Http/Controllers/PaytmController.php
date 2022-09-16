@@ -63,9 +63,5 @@ class PaytmController extends Controller
     public function paytmPurchase()
     {
         return view('paytm.payment-page');
-<<<<<<< HEAD
-    } 
-=======
     }
->>>>>>> 0d7d46682308916829dd7ff029a5d02c0fc1e985
-}
+  };

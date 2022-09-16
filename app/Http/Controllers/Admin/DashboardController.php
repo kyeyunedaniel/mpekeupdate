@@ -19,7 +19,7 @@ use App\Models\Order;
 use Notification;
 use App\Notifications\BillingNotification;
 use Carbon\Carbon;
-
+use App\Charts\SalesChart;
 
 class DashboardController extends Controller
 {
@@ -44,6 +44,19 @@ class DashboardController extends Controller
             'akurasi' => $akurasi,
             'persen'=>$persen
         ]);
+        }
+
+
+        public function indexChart(Request $request){
+            $chart = new SalesChart;
+
+            $chart->labels(['One', 'Two', 'Three', 'Four']);
+            $chart->dataset('My dataset', 'line', [1, 2, 3, 4]);
+            $chart->dataset('My dataset 2', 'line', [4, 3, 2, 1]);
+            return view('/admin/User', compact('chart'));
+
+
+
         }
 
          public function store_partner(Request $request)
@@ -173,7 +186,7 @@ class DashboardController extends Controller
             return back()->with("error",'password does not match');
         }
     }
-
+    
 
     public function getOrders()
     {
@@ -201,6 +214,7 @@ class DashboardController extends Controller
 
 
     public function index()
+    
     {
         //
          $last = DB::table('orders')->latest()->first();

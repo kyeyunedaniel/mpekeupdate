@@ -119,19 +119,56 @@
             </div>
             </div>
         </div>
-       
+      
     </div>
+    <br><br><br>
+    <?php
+ 
+$dataPoints = array( 
+	array("y" => 33, "label" => "admin" ),
+	array("y" => 24, "label" => "buyers" ),
+	array("y" => 18, "label" => "managers" ),
+	array("y" => 14, "label" => "farmers" ),
+	array("y" => 60, "label" => "warehouses" ),
+	
+);
+ 
+?>
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+window.onload = function() {
+ 
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	theme: "light2",
+	title:{
+		text: "SYSTEMS USERS GRAPH"
+	},
+	axisY: {
+		title: "Number of Users"
+	},
+	data: [{
+		type: "column",
+		yValueFormatString: "#,##0.## people",
+		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+	}]
+});
+chart.render();
+ 
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 400px; width: 90%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>             
 </div>
-        <!-- <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
 
-                <div class="card-body">
-                     
-                </div>
-            </div>
-        </div> -->
-    </div>
+</div>
+
 </div>            
 
     </main>
