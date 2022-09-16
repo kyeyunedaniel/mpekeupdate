@@ -29,5 +29,53 @@
                 </div>
             </div>
     </div>
+    <br><br><br><br>
+    <?php
+    $warehouses=DB::table('warehouses')->count();
+    $farmer=DB::table('users')->where('user_type','farmer')->count();
+    $dataPoints = array( 
+	
+	
+	array("y" => $warehouses, "label" => "warehouses" ),
+	array("y" => $farmer, "label" => "farmers" ),
+	
+	
+);
+
+ 
+?>
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+window.onload = function() {
+ 
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	theme: "light2",
+	title:{
+		text: "SYSTEMS USERS GRAPH"
+	},
+	axisY: {
+		title: "Number of Users"
+	},
+	data: [{
+		type: "column",
+		yValueFormatString: "#,##0.## people",
+		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+	}]
+});
+chart.render();
+ 
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 400px; width: 90%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>
 </div>
+<br><br><br>
+          
 @endsection
